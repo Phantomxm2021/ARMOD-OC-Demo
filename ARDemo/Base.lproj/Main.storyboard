@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EnW-dA-lrA">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lj7-wN-hcn">
+                                <rect key="frame" x="168" y="432" width="78" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="AR Launch"/>
+                                <connections>
+                                    <action selector="ButtonEvent:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bbb-xX-fGH"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mBC-77-ba8">
+                                <rect key="frame" x="73" y="345" width="268" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mBC-77-ba8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="73" id="8o0-Sf-yqt"/>
+                            <constraint firstItem="Lj7-wN-hcn" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OPR-fb-1fq"/>
+                            <constraint firstItem="mBC-77-ba8" firstAttribute="centerX" secondItem="Lj7-wN-hcn" secondAttribute="centerX" id="Ynl-a9-0KO"/>
+                            <constraint firstItem="Lj7-wN-hcn" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="d3p-Wp-AJs"/>
+                            <constraint firstItem="Lj7-wN-hcn" firstAttribute="top" secondItem="mBC-77-ba8" secondAttribute="bottom" constant="53" id="w9Q-NP-64z"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="R0Q-uq-2c1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="ubz-BN-xuX">
+                            <connections>
+                                <segue destination="JQh-3a-8vM" kind="popoverPresentation" identifier="popoverSegue" popoverAnchorBarButtonItem="ubz-BN-xuX" id="FE9-Hv-djc">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="projectIdField" destination="mBC-77-ba8" id="0fJ-ox-8Ba"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1957.9710144927537" y="93.75"/>
+        </scene>
+        <!--Pop Over View-->
+        <scene sceneID="mBA-41-s4W">
+            <objects>
+                <viewController id="JQh-3a-8vM" customClass="PopOverView" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FGK-5g-Haw">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="100"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZB0-jZ-LoR">
+                                <rect key="frame" x="11" y="35" width="98" height="30"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="AR 扫一扫"/>
+                                <connections>
+                                    <action selector="arScaner:" destination="JQh-3a-8vM" eventType="touchUpInside" id="Poa-Mm-N4b"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="63c-aw-amI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="o7g-Vk-4wP"/>
+                    <value key="contentSizeForViewInPopover" type="size" width="100" height="100"/>
+                    <size key="freeformSize" width="120" height="100"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l0V-wL-wC0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2514" y="-133"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="UCg-GB-1H7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="EnW-dA-lrA" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="sIv-Sv-dg4">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="LaL-Fc-KAc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gdK-HB-ndo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1047.8260869565217" y="93.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
