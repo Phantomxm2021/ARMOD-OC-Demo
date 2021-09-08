@@ -90,13 +90,29 @@
 
 
 
-- (NSString *)tryAcquireInformation:(NSString *)opTag {
-    return @"";
-}
+//- (NSString *)tryAcquireInformation:(NSString *)opTag {
+//    return @"";
+//}
 
 - (void)packageSizeMoreThanPresetSize:(float)currentSize preset:(float)presetSize {
     
 }
+
+- (void)onARMODExit {
+    
+}
+
+
+- (void)onARMODLaunch {
+    
+}
+
+
+- (void)tryAcquireInformation:(NSString *)opTag CallBackFuncP:(TryAcquireInformationCallBackFuncP)callback {
+    if(callback!=nil)
+        callback([opTag UTF8String]);
+}
+
 
 
 
